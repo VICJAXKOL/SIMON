@@ -65,3 +65,16 @@ Simon.prototype.checkSequence = function (indexOfArray) {
     this.launchError();
   }
 };
+
+// Launches error sequence
+Simon.prototype.launchError = function () {
+  $("body").css("background-color", "red");
+  $("h1").text("Game Over");
+  setTimeout(function () {
+    $("h1").text("Press Enter Key to start");
+    $("body").css("background-color", "#011F3F");
+  }, 1500);
+
+  this.levelCounter = 0;
+  this.sequenceMade = [];
+};
