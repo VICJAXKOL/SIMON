@@ -49,3 +49,19 @@ Simon.prototype.changeLevel = function () {
   $("#level-title").text(`Level: ${this.levelCounter}`);
 
 };
+
+//This checks if the sequences is correct so far
+Simon.prototype.checkSequence = function (indexOfArray) {
+
+  if (this.sequenceUser[indexOfArray] === this.sequenceMade[indexOfArray]) {
+
+    if (this.sequenceMade.length === this.sequenceUser.length) {
+      let me = this;
+      setTimeout(function () {
+        me.nextSequence();
+      }, 1000);
+    }
+  } else {
+    this.launchError();
+  }
+};
